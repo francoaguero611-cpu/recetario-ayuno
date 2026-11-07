@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi Recetario para Romper el Ayuno · Ayuno 2.0</title>
+<meta name="description" content="Tu recetario personalizado para romper el ayuno: 21 comidas armadas para vos, con tu lista de compras.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#5e30cc">
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=2">
+</head>
+<body>
+
+<!-- ── Cuestionario ─────────────────────────────────────────────── -->
+<div id="vista-cuestionario" class="vista" hidden>
+  <header class="barra">
+    <img src="logo.png" alt="" class="barra-logo">
+    <div class="barra-texto">
+      <strong>Mi Recetario para Romper el Ayuno</strong>
+      <span>Ayuno 2.0 · Lic. Lucas Martínez</span>
+    </div>
+  </header>
+
+  <main class="cuestionario">
+    <div class="progreso" aria-hidden="true"><div class="progreso-barra" id="progreso-barra"></div></div>
+    <p class="paso-num" id="paso-num"></p>
+    <form id="form" novalidate autocomplete="on">
+      <div id="pregunta"></div>
+      <p class="error" id="error" role="alert" hidden></p>
+      <div class="botones">
+        <button type="button" class="btn btn-sec" id="atras">Atrás</button>
+        <button type="submit" class="btn btn-pri" id="siguiente">Siguiente</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<!-- ── Armando ──────────────────────────────────────────────────── -->
+<div id="vista-armando" class="vista vista-centro" hidden>
+  <div class="armando">
+    <div class="ruedita" aria-hidden="true"></div>
+    <h1>Estoy armando tu recetario</h1>
+    <ol class="pasos-armado" id="pasos-armado">
+      <li>Leyendo tus respuestas</li>
+      <li>Eligiendo tus 21 comidas</li>
+      <li>Ajustando las cantidades</li>
+      <li>Armando tu lista de compras</li>
+      <li>Escribiendo por qué cada una es para vos</li>
+    </ol>
+    <p class="chico">Tarda menos de un minuto. No cierres esta página.</p>
+  </div>
+</div>
+
+<!-- ── Error al abrir ───────────────────────────────────────────── -->
+<div id="vista-error" class="vista vista-centro" hidden>
+  <div class="armando">
+    <h1>No pudimos abrir tu recetario</h1>
+    <p id="error-texto"></p>
+    <a class="btn btn-pri" href="./">Volver al inicio</a>
+  </div>
+</div>
+
+<!-- ── Recetario ────────────────────────────────────────────────── -->
+<div id="vista-recetario" class="vista" hidden>
+  <div class="herramientas no-print">
+    <button type="button" class="btn btn-pri" id="descargar">Descargar PDF</button>
+    <button type="button" class="btn btn-sec" id="copiar">Copiar mi link</button>
+  </div>
+  <p class="aviso-app no-print" id="aviso-app" hidden>
+    Para descargar el PDF, abrí este link en <strong>Chrome</strong> o <strong>Safari</strong>
+    (tocá los tres puntitos y elegí «Abrir en el navegador»). Tu recetario queda guardado en tu link.
+  </p>
+  <p class="aviso-guardar no-print">Guardá tu link: con él volvés a abrir tu recetario cuando quieras, desde cualquier celular o compu.</p>
+  <article class="libro" id="libro"></article>
+  <p class="pie-web no-print"><a href="./" id="otro">Armar otro recetario</a></p>
+</div>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>
